@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+	<Import Condition=" !Exists('Directory.Build.props.user') " Project="Directory.Build.props.default" />
+	<Import Condition=" Exists('Directory.Build.props.user') " Project="Directory.Build.props.user" />
+
+	<PropertyGroup>
+		<Optimize>true</Optimize>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<BepInExLibsFolder>$(GameFolder)\BepInEx\core</BepInExLibsFolder>
+		<GameLibsFolder>$(GameFolder)\Cult of the Lamb_Data\Managed</GameLibsFolder>
+		<ModFolder>$(GameFolder)\BepInEx\plugins</ModFolder>
+		<LibFolder>$(DirectoryBuildPropsPath)\..\lib</LibFolder>
+	</PropertyGroup>
+
+
+	<!--Copyright notice-->
+	<PropertyGroup>
+		<CurrentYear>$([System.DateTime]::Now.ToString(`yyyy`))</CurrentYear>
+		<Author>ShadowKitty42</Author>
+		<AssemblyCopyright>Copyright ©$(Author) $(CurrentYear)</AssemblyCopyright>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!--Normal Versions of the main dlls-->
+		<AssemblyNormal>$(GameLibsFolder)/Assembly-CSharp.dll</AssemblyNormal>
+		<AssemblyFirstpassNormal>$(GameLibsFolder)/Assembly-CSharp-firstpass.dll</AssemblyFirstpassNormal>
+		<!--Publicized Versions of the main dlls, everything here is made public-->
+		<AssemblyPublicized>$(LibFolder)/Assembly-CSharp_public.dll</AssemblyPublicized>
+		<AssemblyFirstpassPublicized>$(LibFolder)/Assembly-CSharp-firstpass_public.dll</AssemblyFirstpassPublicized>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(GameLibsFolder)\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp-firstpass">
+			<HintPath>$(GameLibsFolder)\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	    <Reference Include="Il2Cppmscorlib">
+	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+	      <Private>False</Private>
+	    </Reference>
+	    <Reference Include="Il2CppPlayMaker">
+	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\Il2CppPlayMaker.dll</HintPath>
+	      <Private>False</Private>
+	    </Reference>
+	    <Reference Include="UnityEngine.CoreModule">
+	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+	      <Private>False</Private>
+	    </Reference>
+		<Reference Include="Il2CppInterop.Runtime">
+			<HintPath>$(GameLibsFolder)\net6\Il2CppInterop.Runtime.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(GameLibsFolder)\net6\0Harmony.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="MelonLoader">
+			<HintPath>$(GameLibsFolder)\net6\MelonLoader.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!--Normal Versions of the main dlls-->
+		<AssemblyNormal>$(GameLibsFolder)/Assembly-CSharp.dll</AssemblyNormal>
+		<AssemblyFirstpassNormal>$(GameLibsFolder)/Assembly-CSharp-firstpass.dll</AssemblyFirstpassNormal>
+		<!--Publicized Versions of the main dlls, everything here is made public-->
+		<AssemblyPublicized>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp_public.dll</AssemblyPublicized>
+		<AssemblyFirstpassPublicized>$(SolutionDir)/PublicisedAssembly/Assembly-CSharp-firstpass_public.dll</AssemblyFirstpassPublicized>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(IsMod)' == 'true'">
+		<PackageReference Include="Aze.Publicise.MSBuild.Task" Version="*">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+    </ItemGroup>
+
+	<ItemGroup Condition="'$(IsPacked)' == 'true'">
+		<PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="*">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>
