@@ -9,7 +9,7 @@ using Lamb.UI.UpgradeMenu;
 
 namespace CultOfArchipelago.Patches
 {
-    /*[HarmonyPatch(typeof(UIUpgradeShopMenuController), nameof(UIUpgradeShopMenuController.OnShowStarted))]
+    [HarmonyPatch(typeof(UIUpgradeShopMenuController), nameof(UIUpgradeShopMenuController.OnEnable))]
     public static class APPatches
     {
         public static void Prefix(UIUpgradeShopMenuController __instance)
@@ -23,7 +23,7 @@ namespace CultOfArchipelago.Patches
         }
     }
 
-    [HarmonyPatch(typeof(UpgradeTreeNode), nameof(UpgradeTreeNode.IsAvailable))]
+    /*[HarmonyPatch(typeof(UpgradeTreeNode), nameof(UpgradeTreeNode.IsAvailable))]
     public static class UpgradeTree
     {
         public static bool Prefix(ref bool __result)
@@ -32,7 +32,7 @@ namespace CultOfArchipelago.Patches
             __result = true;
             return false;
         }
-    }*/
+    }
 
     [HarmonyPatch(typeof(UIUpgradeUnlockOverlayController), nameof(UIUpgradeUnlockOverlayController.IsAvailable))]
     public static class UpgradeUnlockOverlayControllerPatch
@@ -43,5 +43,5 @@ namespace CultOfArchipelago.Patches
             Plugin.Logger.LogInfo($"UIUpgradeUnlockOverlayController IsAvailable Prefix was hit!");
             return true;
         }
-    }
+    }*/
 }
