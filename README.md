@@ -13,5 +13,6 @@ Setting up the development environment is fairly simple:
 3. Rename the `Directory.Build.props.default` file to `Directory.Build.props.user`.
 4. Open `Directory.Build.props.user` using a text editor.
 5. Edit the `GameFolder` property to match your game installation.
+6. Copy the `BepInEx.cfg` file from `CultOfArchipelago\Config` to the `BepInEx\config` folder in your game installation folder.`
 
 Your dev tools should automatically find the libraries and will copy the `.dll` to the BepInEx's plugins folder after building the project.

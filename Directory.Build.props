@@ -29,41 +29,6 @@
 		<AssemblyFirstpassPublicized>$(LibFolder)/Assembly-CSharp-firstpass_public.dll</AssemblyFirstpassPublicized>
 	</PropertyGroup>
 
-	<ItemGroup>
-		<Reference Include="Assembly-CSharp">
-			<HintPath>$(GameLibsFolder)\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Assembly-CSharp-firstpass">
-			<HintPath>$(GameLibsFolder)\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-	    <Reference Include="Il2Cppmscorlib">
-	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
-	      <Private>False</Private>
-	    </Reference>
-	    <Reference Include="Il2CppPlayMaker">
-	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\Il2CppPlayMaker.dll</HintPath>
-	      <Private>False</Private>
-	    </Reference>
-	    <Reference Include="UnityEngine.CoreModule">
-	      <HintPath>$(GameLibsFolder)\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
-	      <Private>False</Private>
-	    </Reference>
-		<Reference Include="Il2CppInterop.Runtime">
-			<HintPath>$(GameLibsFolder)\net6\Il2CppInterop.Runtime.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="0Harmony">
-			<HintPath>$(GameLibsFolder)\net6\0Harmony.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="MelonLoader">
-			<HintPath>$(GameLibsFolder)\net6\MelonLoader.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-	</ItemGroup>
-
 	<PropertyGroup>
 		<!--Normal Versions of the main dlls-->
 		<AssemblyNormal>$(GameLibsFolder)/Assembly-CSharp.dll</AssemblyNormal>

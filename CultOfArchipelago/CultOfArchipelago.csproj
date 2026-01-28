@@ -94,7 +94,7 @@
     		<HintPath>$(GameLibsFolder)/UnityEngine.UIModule.dll</HintPath>
     		<Private>false</Private>
     	</Reference>
-    	<Reference Include="UnityEngine.WebRequestModule">
+    	<Reference Include="UnityEngine.UnityWebRequestModule">
     		<HintPath>$(GameLibsFolder)/UnityEngine.UnityWebRequestModule.dll</HintPath>
     		<Private>false</Private>
     	</Reference>
@@ -102,6 +102,18 @@
 		  <HintPath>$(GameLibsFolder)/Sirenix.Serialization.dll</HintPath>
 		  <Private>false</Private>
 	  </Reference>
+    <Reference Include="UnifyLibrary">
+      <HintPath>$(GameLibsFolder)/UnifyLibrary.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>$(GameLibsFolder)/Rewired_Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="com.steamworks.net">
+      <HintPath>$(GameLibsFolder)/com.steamworks.net.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
