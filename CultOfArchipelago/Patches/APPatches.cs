@@ -32,7 +32,7 @@ namespace CultOfArchipelago
         }
 
 
-        [Harmony]
+        /*[Harmony]
         public static class UpgradeTree
         {
             [HarmonyPrefix]
@@ -42,6 +42,16 @@ namespace CultOfArchipelago
                 Plugin.Logger.LogInfo($"UpgradeTreeNode Prefix was hit!");
                 __result = true;
                 return false;
+            }
+        }*/
+        [Harmony]
+        public static class UpgradeTree
+        {
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(UpgradeSystem), nameof(UpgradeSystem.GetLocalizedDescription))]
+            public static void Prefix(UpgradeSystem.Type Type)
+            {
+                Plugin.Logger.LogInfo($"{Type}");
             }
         }
 
